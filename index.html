@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Select Directory and List MP3/SRT Pairs</title>
+    <style>
+      li {
+	  cursor: pointer;
+      }
+      #audioPlayer {
+	  position: fixed;
+      }
+      #file-list {
+	  height: 90%;
+	  width: 200px;
+	  overflow: scroll;
+	  display: block;
+	  position: absolute;
+      }
+      #content {
+	  height: 90%;
+	  width: calc(100% - 250px);
+	  border:1px solid gray;
+	  margin-left: 200px;
+	  overflow-x: scroll;
+	  overflow-y: scroll;
+	  display: block;
+	  position: absolute;
+      }
+      #srt {
+	  padding-top: 50px;
+      }
+      #srt div {
+	  cursor: pointer;
+      }
+      .selected {
+	  background-color: lightpink;
+      }
+      .nowrap {
+	  white-space: nowrap;
+      }
+
+    </style>
+    <script src="index.js"></script>
+  </head>
+  <body onload="init()">
+    <input type="file" id="dirPicker" webkitdirectory directory multiple />
+    <div id="file-list">
+      <ul id="fileList"></ul>
+    </div>
+    <div id="content">
+      <audio id="audioPlayer" controls style="display:none;"></audio>
+      <div id="srt"></div>
+    </div>
+  </body>
+</html>
